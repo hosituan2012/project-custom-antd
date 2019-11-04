@@ -1,0 +1,12 @@
+<div nz-row nzType="flex" nzJustify="start" class="user-modal-input" [formGroup]="parentForm">
+  <div nz-col [nzSpan]="colLabel">{{placeholder | titlecase}}</div>
+  <div nz-col [nzSpan]="colInput">
+    <nz-form-control>
+      <nz-input-group>
+        <nz-select style="width: 100%" [nzPlaceHolder]="placeholder" [formControlName]="formCtrName" nzAllowClear>
+          <nz-option *ngFor="let item of optionData" [nzValue]="item.key" [nzLabel]="item.value"></nz-option>
+        </nz-select>
+      </nz-input-group>
+    </nz-form-control>
+  </div>
+</div>

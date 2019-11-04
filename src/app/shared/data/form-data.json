@@ -1,0 +1,90 @@
+[{
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "username",
+ "formType": "input",
+ "regex": "",
+ "required": true,
+ "formCtr": "tempForm",
+ "placeholder": "Username",
+ "defaultValue": ""
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "password",
+ "formType": "input",
+ "regex": "",
+ "required": false,
+ "formCtr": "tempForm",
+ "placeholder": "Password",
+ "typeInput": "password",
+ "defaultValue": ""
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "email",
+ "value": [{"key": "admin", "value": "Admin"}, {"key": "member", "value": "Member"}, {"key": "guest", "value": "Guest"}],
+ "formType": "select",
+ "regex": "",
+ "required": false,
+ "formCtr": "tempForm",
+ "placeholder": "Email"
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "role",
+ "formType": "multiple-select",
+ "value": [{"key": "admin", "value": "Admin"}, {"key": "member", "value": "Member"}, {"key": "guest", "value": "Guest"}],
+ "regex": "",
+ "required": false,
+ "formCtr": "tempForm",
+ "placeholder": "Role"
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "time",
+ "formType": "time",
+ "regex": "",
+ "required": false,
+ "formCtr": "tempForm",
+ "placeholder": "Time"
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "date",
+ "formType": "date",
+ "regex": "",
+ "required": false,
+ "formCtr": "tempForm",
+ "placeholder": "Date"
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "username",
+ "formType": "input",
+ "regex": "",
+ "required": true,
+ "formCtr": "userForm",
+ "placeholder": "Username",
+ "defaultValue": ""
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "email",
+ "value": [{"key": "admin", "value": "Admin"}, {"key": "member", "value": "Member"}, {"key": "guest", "value": "Guest"}],
+ "formType": "select",
+ "regex": "",
+ "required": false,
+ "formCtr": "userForm",
+ "placeholder": "Email"
+}, {
+ "col-label": "5",
+ "col-input": "19",
+ "formCtrName": "role",
+ "formType": "multiple-select",
+ "value": [{"key": "admin", "value": "Admin"}, {"key": "member", "value": "Member"}, {"key": "guest", "value": "Guest"}],
+ "regex": "",
+ "required": false,
+ "formCtr": "userForm",
+ "placeholder": "Role"
+}]

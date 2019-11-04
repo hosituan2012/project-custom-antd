@@ -1,0 +1,27 @@
+<div nz-row nzType="flex" nzJustify="start" class="user-modal-input" [formGroup]="parentForm">
+  <div nz-col [nzSpan]="colLabel">{{placeholder | titlecase}}</div>
+  <div nz-col [nzSpan]="colInput">
+    <nz-form-control>
+      <nz-input-group *ngIf="typeInput !== 'password'">
+        <input [type]="typeInput" nz-input [placeholder]="placeholder" [formControlName]="formCtrName"/>
+      </nz-input-group>
+      <nz-input-group [nzSuffix]="passwordTemplate" *ngIf="typeInput == 'password'">
+        <input 
+          [type]="passwordVisible ? 'text' : 'password'"
+          nz-input
+          [placeholder]="placeholder"
+          [formControlName]="formCtrName"
+          (input)="onChangePassword($event)"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </div>
+</div>
+
+
+<ng-template #passwordTemplate>
+  <i nz-icon nzType="lock" *ngIf="!hasPassString"></i>
+  <i nz-icon nzType="eye-invisible" *ngIf="hasPassString && passwordVisible" (click)="changeView()"></i>
+  <i nz-icon nzType="eye" *ngIf="hasPassString && !passwordVisible" (click)="changeView()"></i>
+</ng-template>
+

@@ -1,0 +1,25 @@
+<form nz-form [formGroup]="formName" class="login-form" (ngSubmit)="submitForm()">
+  <div nz-col [nzSpan]="25">
+    <div *ngFor="let item of mainData">
+      <app-input-custom *ngIf="item.formType == 'input'" [typeInput]="item.typeInput" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder">
+      </app-input-custom>
+  
+      <app-select-custom *ngIf="item.formType == 'select'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder" [optionData]="item.value">
+      </app-select-custom>
+  
+      <app-multiple-select-custom *ngIf="item.formType == 'multiple-select'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder" [optionData]="item.value">
+      </app-multiple-select-custom>
+  
+      <app-time-custom *ngIf="item.formType == 'time'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder">
+      </app-time-custom>
+
+      <app-date-custom *ngIf="item.formType == 'date'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder">
+        </app-date-custom>
+    </div>
+  </div>
+  <div nz-col nzSpan="24" class="user-modal-btn">  
+    <span class="user-modal-warning pull-left" *ngIf="!isValid">* Please fill all the field has * and correct type of email</span>
+    <button nz-button nzType="primary" type="submit" class="pull-right" [nzLoading]="isConfirmLoading">Submit</button>
+    <button nz-button nzType="default" class="pull-right user-modal-btn__cancel" (click)="destroyModal('close')">Cancel</button>
+  </div>
+</form>

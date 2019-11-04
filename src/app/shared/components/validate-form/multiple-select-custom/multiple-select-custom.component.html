@@ -1,0 +1,20 @@
+<div nz-row nzType="flex" nzJustify="start" class="user-modal-input" [formGroup]="parentForm">
+  <div nz-col [nzSpan]="colLabel">{{placeholder | titlecase}}</div>
+  <div nz-col [nzSpan]="colInput">
+    <nz-form-control>
+      <nz-input-group>
+        <nz-select
+          [nzMaxTagCount]="3"
+          [nzMaxTagPlaceholder]="tagPlaceHolder"
+          style="width: 100%"
+          nzMode="multiple"
+          [nzPlaceHolder]="placeholder"
+          [formControlName]="formCtrName"
+        >
+          <nz-option *ngFor="let option of optionData" [nzValue]="option.key" [nzLabel]="option.value"></nz-option>
+        </nz-select>        
+      </nz-input-group>
+    </nz-form-control>
+  </div>
+</div>
+<ng-template #tagPlaceHolder let-selectedList> and {{ selectedList.length }} more selected </ng-template>

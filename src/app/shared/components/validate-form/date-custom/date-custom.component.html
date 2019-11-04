@@ -1,0 +1,10 @@
+<div nz-row nzType="flex" nzJustify="start" class="user-modal-input" [formGroup]="parentForm">
+  <div nz-col [nzSpan]="colLabel">{{placeholder | titlecase}}</div>
+  <div nz-col [nzSpan]="colInput">
+    <nz-form-control>
+      <nz-input-group>
+        <nz-date-picker [formControlName]="formCtrName"></nz-date-picker>
+      </nz-input-group>
+    </nz-form-control>
+  </div>
+</div>

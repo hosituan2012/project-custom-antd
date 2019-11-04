@@ -1,0 +1,14 @@
+<div nz-row nzType="flex" nzJustify="start" class="user-modal-input" [formGroup]="parentForm">
+  <div nz-col [nzSpan]="colLabel">{{placeholder | titlecase}}</div>
+  <div nz-col [nzSpan]="colInput">
+    <nz-form-control>
+      <nz-input-group>
+        <nz-time-picker
+          (ngModelChange)="changeValue($event)"
+          [formControlName]="formCtrName"
+          [nzFormat]="'HH:mm:ss'"
+        ></nz-time-picker>
+      </nz-input-group>
+    </nz-form-control>
+  </div>
+</div>

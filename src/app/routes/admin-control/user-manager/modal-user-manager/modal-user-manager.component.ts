@@ -17,8 +17,7 @@ export class ModalUserManagerComponent implements OnInit {
   data = {
     username: 'Test',
     email: 'admin',
-    role: ['admin', 'guest'],
-    time: ['2019-11-02 15:08:16.138Z']
+    role: ['admin', 'guest']
   };
 
   constructor(

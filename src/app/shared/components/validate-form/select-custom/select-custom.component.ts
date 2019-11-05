@@ -9,8 +9,8 @@ import { FormControl } from '@angular/forms';
 export class SelectCustomComponent implements AfterContentInit {
 
   // @Input() class = 'default';
-  @Input() colLabel = null;
-  @Input() colInput = null;
+  @Input() colLabel: number = null;
+  @Input() colInput: number = null;
   @Input() formCtrName = null;
   @Input() placeholder = '';
   @Input() optionItem = [];
@@ -23,6 +23,7 @@ export class SelectCustomComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     this.cdr.detectChanges();
+    console.log('col', this.colLabel);
+    
   }
-
 }

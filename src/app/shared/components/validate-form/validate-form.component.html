@@ -1,20 +1,22 @@
 <form nz-form [formGroup]="formName" class="login-form" (ngSubmit)="submitForm()">
-  <div nz-col [nzSpan]="25">
+  <div nz-col [nzSpan]="24">
     <div *ngFor="let item of mainData">
-      <app-input-custom *ngIf="item.formType == 'input'" [typeInput]="item.typeInput" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder">
-      </app-input-custom>
-  
-      <app-select-custom *ngIf="item.formType == 'select'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder" [optionData]="item.value">
-      </app-select-custom>
-  
-      <app-multiple-select-custom *ngIf="item.formType == 'multiple-select'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder" [optionData]="item.value">
-      </app-multiple-select-custom>
-  
-      <app-time-custom *ngIf="item.formType == 'time'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder">
-      </app-time-custom>
-
-      <app-date-custom *ngIf="item.formType == 'date'" [colLabel]="5" [colInput]="19" [parentForm]="formName" [formCtrName]="item.formCtrName" [placeholder]="item.placeholder">
-        </app-date-custom>
+      <div nz-col [nzSpan]="item.col_responsive ? item.col_responsive : 24">
+        <app-input-custom *ngIf="item.form_type == 'input'" [typeInput]="item.type_input" [colLabel]="item.col_label" [colInput]="item.col_input" [parentForm]="formName" [formCtrName]="item.form_ctr_name" [placeholder]="item.place_holder">
+          </app-input-custom>
+      
+          <app-select-custom *ngIf="item.form_type == 'select'" [colLabel]="item.col_label" [colInput]="item.col_input" [parentForm]="formName" [formCtrName]="item.form_ctr_name" [placeholder]="item.place_holder" [optionData]="item.value">
+          </app-select-custom>
+      
+          <app-multiple-select-custom *ngIf="item.form_type == 'multiple-select'" [colLabel]="item.col_label" [colInput]="item.col_input" [parentForm]="formName" [formCtrName]="item.form_ctr_name" [placeholder]="item.place_holder" [optionData]="item.value">
+          </app-multiple-select-custom>
+      
+          <app-time-custom *ngIf="item.form_type == 'time'" [colLabel]="item.col_label" [colInput]="item.col_input" [parentForm]="formName" [formCtrName]="item.form_ctr_name" [placeholder]="item.place_holder">
+          </app-time-custom>
+    
+          <app-date-custom *ngIf="item.form_type == 'date'" [colLabel]="item.col_label" [colInput]="item.col_input" [parentForm]="formName" [formCtrName]="item.form_ctr_name" [placeholder]="item.place_holder">
+          </app-date-custom>
+      </div>
     </div>
   </div>
   <div nz-col nzSpan="24" class="user-modal-btn">  

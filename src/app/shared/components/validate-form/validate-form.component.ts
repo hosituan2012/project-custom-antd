@@ -14,7 +14,7 @@ export class ValidateFormComponent implements OnInit {
   @Input() formCtr: string;
   @Input() formData: any;
   @Output() dataSubmit: EventEmitter<number> =   new EventEmitter();
- 
+
   formName: FormGroup;
   arrData: any = dataValidate['default'];
   mainData: Array<any> = [];
@@ -30,15 +30,17 @@ export class ValidateFormComponent implements OnInit {
 
   ngOnInit() {
     this.arrData.forEach(e => {
-      if (e.formCtr == this.formCtr) {
+      if (e.form_ctr == this.formCtr) {
         this.mainData.push(e);
         if (e.required == true) {
-          this.formName.addControl(e.formCtrName, new FormControl(null, Validators.required));
+          this.formName.addControl(e.form_ctr_name, new FormControl(null, Validators.required));
         } else {
-          this.formName.addControl(e.formCtrName, new FormControl(null, null));
+          this.formName.addControl(e.form_ctr_name, new FormControl(null, null));
         }
       }
     });
+    console.log('data', this.mainData);
+    
     this.formName.patchValue(this.formData);
     console.log('form', this.formCtr, this.formName);
     let all = '2019-11-02 15:08:16.138Z';
@@ -75,7 +77,7 @@ export class ValidateFormComponent implements OnInit {
         }
       }
       if (data.time) {
-        data.time = moment(data.time).toISOString();
+        // data.time = moment(data.time).toISOString();
       }
       if (data.date) {
         data.date = moment(data.date).toISOString();
